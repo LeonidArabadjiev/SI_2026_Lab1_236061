@@ -1,0 +1,9 @@
+*   abc123 Merge branch 'feature-genre-report'
+|\  
+| * def456 Implement genre report
+* | ghi789 Update borrow message on master
+|/  
+* jkl012 Implement borrow book
+* mno345 Implement book search
+* pqr678 Add starter code
+* stu901 Initial commit

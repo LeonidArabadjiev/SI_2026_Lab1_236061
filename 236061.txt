@@ -1,0 +1,81 @@
+1. Креирав локален репозиториум:
+git init
+
+2. Го поврзав со GitHub:
+git remote add origin <repo-link>
+
+3. Додадов README.md:
+git add README.md
+git commit -m "Initial commit"
+git push -u origin master
+
+4. Додадов starter код:
+git add SI2026Lab1Main.java
+git commit -m "Add starter code"
+git push
+
+5. Креирав гранка feature-search-books:
+git checkout -b feature-search-books
+
+6. Имплементирав пребарување книга и направив commit:
+git add .
+git commit -m "Implement book search"
+git push -u origin feature-search-books
+
+7. Се вратив на master и направив merge:
+git checkout master
+git merge feature-search-books
+
+Овој merge беше fast-forward бидејќи немаше други промени на master.
+
+8. Креирав гранки:
+git checkout -b feature-borrow-book
+git checkout master
+git checkout -b feature-genre-report
+
+9. Во feature-borrow-book имплементирав borrow функција:
+git add .
+git commit -m "Implement borrow book"
+git push -u origin feature-borrow-book
+
+10. Во master ја сменив пораката:
+git checkout master
+git add .
+git commit -m "Update borrow message on master"
+git push
+
+11. Во feature-genre-report имплементирав printBooksByGenre:
+git checkout feature-genre-report
+git add .
+git commit -m "Implement genre report"
+git push -u origin feature-genre-report
+
+12. Merge на master во feature-borrow-book:
+git checkout feature-borrow-book
+git merge master
+
+Овој merge беше fast-forward (немаше конфликт).
+
+13. Merge на feature-genre-report во master:
+git checkout master
+git merge feature-genre-report
+
+Настана конфликт во SI2026Lab1Main.java.
+Го решив рачно со задржување на "Borrowed successfully.".
+Користена е recursive merge стратегија.
+
+git add .
+git commit
+
+14. Merge на feature-borrow-book во master:
+git merge feature-borrow-book
+
+Овој merge беше recursive бидејќи имаше претходни промени.
+
+15. Генерирав логови:
+git log --oneline --graph --all > logs.txt
+
+16. Финален commit:
+git add .
+git commit -m "Final commit"
+git push
